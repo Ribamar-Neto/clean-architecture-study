@@ -4,6 +4,25 @@
   "files.exclude": {
     "**/*.pyc": { "when": "$(basename).py" },
     "**/__pycache__": true,
-    "**/*.pytest_cache": true,
-  }
+    "**/*.pytest_cache": true
+  },
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": false,
+  "python.formatting.provider": "none",
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+  "python.linting.enabled": true,
+  "python.linting.ruffEnabled": true,
+  "python.linting.pylintEnabled": false
 }

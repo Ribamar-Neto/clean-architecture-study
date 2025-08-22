@@ -1,14 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "clean-arch-study"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "cryptography>=45.0.6",
-    "mysql-connector-python>=9.4.0",
-    "pre-commit>=4.3.0",
-    "pymysql>=1.1.1",
-    "pytest>=8.4.1",
-    "sqlalchemy>=2.0.43",
+description = "Clean Architecture Study Project"
+dependencies = []
+
+[tool.ruff]
+# Mesmo comprimento de linha que o pylint
+line-length = 100
+indent-width = 4
+
+# Usar Python 3.10+ (ajuste conforme sua versão)
+target-version = "py310"
+
+[tool.ruff.lint]
+# Regras similares ao pylint
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort (import sorting)
+    "C90", # mccabe complexity
 ]
+
+# Ignorar algumas regras que o pylint já ignora
+ignore = [
+    "E501",  # line too long (será tratado pelo formatter)
+]
+
+[tool.ruff.lint.isort]
+# Configuração para ordenação de imports
+known-first-party = ["src"]
+
+[tool.ruff.format]
+# Usar aspas duplas (padrão)
+quote-style = "double"
+# Usar 4 espaços para indentação
+indent-style = "space"

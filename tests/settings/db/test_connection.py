@@ -1,5 +1,7 @@
 import pytest
+
 from src.settings.db import DBConnectionHandler
+
 
 @pytest.mark.skip(reason="Sensive test")
 def test_create_database_engine():
